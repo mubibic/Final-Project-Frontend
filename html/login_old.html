@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link
+          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../css/global_old.css"/>
+  <link rel="stylesheet" href="../css/login_old.css"/>
+
+  <title>Hardware Management System login page</title>
+
+</head>
+<header class="header-login">
+  <nav class="nav">
+    <a onclick="window.location='main-page.html'" type="button">
+    <img
+            src="../img/logos/storage-logo3.jpeg"
+            alt="Storage logo"
+            class="nav__logo"
+            id="logo"
+            data-version-number="3.0"
+    /></a>
+   </nav>
+
+</header>
+
+<body>
+<div class="animated bounceInDown">
+  <div class="container-login">
+    <span class="error animated data" id="msg"></span>
+    <form name="form1" class="box">
+   <span></span>
+      <h5>Sign in to your account.</h5>
+      <input type="text" id="username" name="username" placeholder="Username" autocomplete="off">
+      <i class="typcn typcn-eye" id="eye"></i>
+      <input type="password" id="password" name="password" placeholder="Passsword" autocomplete="off">
+      <label>
+        <input type="checkbox">
+        <span></span>
+        <small class="rmb">Remember me</small>
+      </label>
+      <input type="submit" id="sign-in-button" value="Sign in" class="btn1" onclick="loginUser()">
+    </form>
+    <a href="registration.html" class="dnthave">Don’t have an account? Sign up</a>
+  </div>
+    <section class="footer-login" >
+      <div class="section__title">
+        <h3 class="footer__link">
+          Back to AGC Biologics homepage
+        </h3>
+        <a href="https://www.agcbio.com/"  class="btn footer__btn"
+        > <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <p class="footer__copyright">© 2024 AGC Biologics</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+<script src="https://kit.fontawesome.com/4a85efafbc.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+        integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+<script src="../js/login/login_old.js"></script>
+
+</body>
+</html>
