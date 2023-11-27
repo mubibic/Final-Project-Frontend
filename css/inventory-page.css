@@ -1,0 +1,75 @@
+/* Basic table styles */
+#inventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#inventoryTable th, #inventoryTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#inventoryTable th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Zebra striping for rows */
+#inventoryTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+#inventoryTable tr:hover {
+    background-color: #eef;
+}
+
+/* Styling headers */
+#inventoryTable thead tr {
+    font-weight: bold;
+}
+
+/* Responsive table */
+@media screen and (max-width: 600px) {
+    #inventoryTable, #inventoryTable thead, #inventoryTable tbody, #inventoryTable th, #inventoryTable td, #inventoryTable tr {
+        display: block;
+    }
+
+    #inventoryTable thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #inventoryTable tr {
+        margin-bottom: 10px;
+    }
+
+    #inventoryTable td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    #inventoryTable td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Label the data */
+    #inventoryTable td:nth-of-type(1):before { content: "ID"; }
+    #inventoryTable td:nth-of-type(2):before { content: "Type"; }
+    #inventoryTable td:nth-of-type(3):before { content: "Model"; }
+    #inventoryTable td:nth-of-type(4):before { content: "Extra Info"; }
+    #inventoryTable td:nth-of-type(5):before { content: "Quantity"; }
+    #inventoryTable td:nth-of-type(6):before { content: "Location"; }
+}
