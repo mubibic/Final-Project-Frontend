@@ -1,4 +1,4 @@
-const inventoryUrl = 'http://localhost:8080/inventory/items'; // Update with your actual backend URL
+const inventoryUrl = 'http://localhost:8080/inventory/items';
 
 document.addEventListener('DOMContentLoaded', getInventoryItems);
 

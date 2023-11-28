@@ -1,0 +1,21 @@
+#addAssetForm {
+    margin-bottom: 20px;
+}
+
+#addAssetForm input[type="text"],
+#addAssetForm input[type="number"] {
+    margin: 5px;
+    padding: 8px;
+}
+
+#addAssetForm button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#addAssetForm button:hover {
+    background-color: #45a049;
+}
