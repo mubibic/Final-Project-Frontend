@@ -7,10 +7,34 @@
           href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
           rel="stylesheet"
   />
+  <link rel="stylesheet" href="../css/global.css"/>
   <link rel="stylesheet" href="../css/inventory-page.css"/>
     <title>Inventory Page</title>
 </head>
 <body>
+<header>
+  <div class="company-logo">
+    <a onclick="window.location='main-page.html'" type="button">
+      <img
+              src="../img/logos/blob.png"
+              alt="Blob logo"
+              class="blob-logo"
+              id="logo"
+              data-version-number = "3.0"
+      /></a></div>
+  <nav class="navbar">
+    <ul class="nav-items">
+
+      <li class="nav-item"><a href="../html/inventory-page.html" class="nav-link">INVENTORY</a></li>
+      <li class="nav-item"><a href="../html/hardware-disposal.html" class="nav-link">ASSET DISPOSAL</a></li>
+    </ul>
+  </nav>
+  <div class="menu-toggle">
+    <i class="bx bx-menu"></i>
+    <i class="bx bx-x"></i>
+  </div>
+</header>
+<button id="addInventoryButton">Add New Inventory Item</button>
 <table id="inventoryTable">
   <thead>
   <tr>
@@ -20,12 +44,15 @@
     <th>Extra Information</th>
     <th>Quantity</th>
     <th>Location</th>
+    <th>Actions</th>
   </tr>
   </thead>
   <tbody>
   <!-- Inventory items will be inserted here -->
   </tbody>
 </table>
+
 <script src="../js/fetchInventoryItems.js"></script>
+<script src="../js/navBar.js"></script>
 </body>
 </html>

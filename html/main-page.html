@@ -3,8 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Hardware Management System main page</title>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/main-page.css"/>
 </head>
 <body>
+<header>
+    <div class="company-logo">
+        <a onclick="window.location='main-page.html'" type="button">
+        <img
+                src="../img/logos/blob.png"
+                alt="Blob logo"
+                class="blob-logo"
+                id="logo"
+                data-version-number = "3.0"
+        /></a></div>
+    <nav class="navbar">
+        <ul class="nav-items">
 
+            <li class="nav-item"><a href="../html/inventory-page.html" class="nav-link">INVENTORY</a></li>
+            <li class="nav-item"><a href="../html/hardware-disposal.html" class="nav-link">ASSET DISPOSAL</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle">
+        <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+    </div>
+</header>
+
+<section class="container section-1">
+    <div class="slogan">
+        <h1 class="company-title">AGC HARDWARE MANAGEMENT SYSTEM</h1>
+        <h2 class="company-slogan">
+            IT-department
+        </h2>
+    </div>
+    <div class="centered-container">
+        <img class="blob_logo" src="../img/logos/blob.png" alt="a blob" class="blob_logo">
+    </div>
+</section>
+
+<script src="../js/navBar.js"></script>
 </body>
 </html>

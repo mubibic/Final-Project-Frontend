@@ -1,0 +1,23 @@
+/* CSS for Edit Inventory Item Form */
+#editItemForm {
+    margin-bottom: 20px;
+}
+
+#editItemForm input[type="text"],
+#editItemForm input[type="number"] {
+    margin: 5px;
+    padding: 8px;
+}
+
+
+#editItemForm button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#editItemForm button:hover {
+    background-color: #45a049;
+}

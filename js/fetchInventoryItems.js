@@ -33,6 +33,39 @@ function createTableRow(item) {
         <td>${item.extraInformation}</td>
         <td>${item.quantity}</td>
         <td>${item.location}</td>
+        <td>
+            <button onclick="editItem(${item.id})">Edit</button>
+            <button onclick="deleteItem(${item.id})">Delete</button>
+        </td>
     `;
     return tableRow;
+}
+
+document.getElementById('addInventoryButton').addEventListener('click', function() {
+    window.location.href = '../html/add-inventory-item.html';
+});
+
+
+function editItem(itemId) {
+    window.location.href = `edit-inventory-item.html?id=${itemId}`;
+}
+
+function deleteItem(id) {
+    if(confirm("Are you sure you want to delete this item?")) {
+        fetch(`http://localhost:8080/inventory/${id}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if(response.ok) {
+                    console.log(`Item with ID ${id} deleted successfully.`);
+                    // Reload the current page to reflect the deletion
+                    location.reload();
+                } else {
+                    throw new Error('Item could not be deleted');
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting item:', error);
+            });
+    }
 }

@@ -7,6 +7,7 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
         extraInformation: document.getElementById('extraInformation').value,
         quantity: parseInt(document.getElementById('quantity').value, 10),
         location: document.getElementById('location').value
+
     };
 
     try {
@@ -24,6 +25,7 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
 
         const result = await response.json();
         console.log('Asset Added:', result);
+        window.location.href = '../html/inventory-page.html';
     } catch (error) {
         console.error('Error adding asset:', error);
     }

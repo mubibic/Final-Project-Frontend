@@ -1,75 +1,42 @@
 /* Basic table styles */
 #inventoryTable {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 
 #inventoryTable th, #inventoryTable td {
-    border: 1px solid #ddd;
+    border: 1px solid #413f3f;
     padding: 8px;
     text-align: left;
 }
 
 #inventoryTable th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #c23b3b;
+    color: #171717;
 }
 
-/* Zebra striping for rows */
 #inventoryTable tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: rgba(241, 208, 208, 0.68); /* Color for even rows */
+}
+#inventoryTable tr:nth-child(odd) {
+    background-color: #e1e1e1; /* Color for odd rows */
 }
 
-/* Hover effect for rows */
 #inventoryTable tr:hover {
-    background-color: #eef;
+    background-color: rgba(208, 159, 191, 0.63);
 }
 
-/* Styling headers */
-#inventoryTable thead tr {
-    font-weight: bold;
-}
-
-/* Responsive table */
-@media screen and (max-width: 600px) {
-    #inventoryTable, #inventoryTable thead, #inventoryTable tbody, #inventoryTable th, #inventoryTable td, #inventoryTable tr {
-        display: block;
-    }
-
-    #inventoryTable thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    #inventoryTable tr {
-        margin-bottom: 10px;
-    }
-
-    #inventoryTable td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-        text-align: right;
-    }
-
-    #inventoryTable td:before {
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-    }
-
-    /* Label the data */
-    #inventoryTable td:nth-of-type(1):before { content: "ID"; }
-    #inventoryTable td:nth-of-type(2):before { content: "Type"; }
-    #inventoryTable td:nth-of-type(3):before { content: "Model"; }
-    #inventoryTable td:nth-of-type(4):before { content: "Extra Info"; }
-    #inventoryTable td:nth-of-type(5):before { content: "Quantity"; }
-    #inventoryTable td:nth-of-type(6):before { content: "Location"; }
+#addInventoryButton {
+    font-family: "Raleway", sans-serif;
+    padding: 10px 15px;
+    background-color: #6e1f3b;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    display: block; /* Make it a block element */
+    margin: 40px auto; /* Centering the button */
+    width: fit-content; /* Adjust width based on content */
 }
