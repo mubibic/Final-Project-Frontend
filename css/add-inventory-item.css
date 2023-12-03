@@ -33,7 +33,7 @@ body {
 
 #addAssetForm button {
     padding: 8px 15px;
-    background-color: #4CAF50;
+    background-color: #6e1f3b;
     color: white;
     border: none;
     cursor: pointer;
@@ -43,5 +43,5 @@ body {
 }
 
 #addAssetForm button:hover {
-    background-color: #45a049;
+    background-color: #9f3158;
 }

@@ -40,3 +40,7 @@
     margin: 40px auto; /* Centering the button */
     width: fit-content; /* Adjust width based on content */
 }
+
+#addInventoryButton:hover {
+    background-color: #9f3158;
+}

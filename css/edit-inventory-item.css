@@ -1,23 +1,48 @@
 /* CSS for Edit Inventory Item Form */
 #editItemForm {
+    box-sizing: border-box; /* Include padding and border in the width calculation */
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%; /* Set width to full available width up to max-width */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+body {
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #0f0a0f; /* Optional: Background color for the body */
 }
 
 #editItemForm input[type="text"],
 #editItemForm input[type="number"] {
     margin: 5px;
     padding: 8px;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Slightly rounded corners */
 }
-
 
 #editItemForm button {
     padding: 8px 15px;
-    background-color: #4CAF50;
+    background-color: #6e1f3b;
     color: white;
     border: none;
     cursor: pointer;
+    width: 100%;
+    margin-top: 10px; /* Space above the button */
+    border-radius: 4px;
 }
 
 #editItemForm button:hover {
-    background-color: #45a049;
+    background-color: #9f3158;
 }
