@@ -13,25 +13,25 @@
 }
 
 #assetDisposalTable th {
-    background-color: #c23b3b;
+    background-color: #6cc24a;
     color: #171717;
 }
 
 #assetDisposalTable tr:nth-child(even) {
-    background-color: rgba(241, 208, 208, 0.68); /* Color for even rows */
+    background-color: rgb(212, 225, 250); /* Color for even rows */
 }
 #assetDisposalTable tr:nth-child(odd) {
-    background-color: #e1e1e1; /* Color for odd rows */
+    background-color: #eff6ff; /* Color for odd rows */
 }
 
 #assetDisposalTable tr:hover {
-    background-color: rgba(208, 159, 191, 0.63);
+    background-color: rgb(190, 201, 250);
 }
 
 #addAssetButton {
     font-family: "Raleway", sans-serif;
     padding: 10px 15px;
-    background-color: #6e1f3b;
+    background-color: #001f6b;
     color: white;
     border: none;
     border-radius: 10px; /* Rounded edges */
@@ -42,5 +42,5 @@
 }
 
 #addAssetButton:hover {
-    background-color: #9f3158;
+    background-color: rgba(22, 49, 176, 0.95);
 }
