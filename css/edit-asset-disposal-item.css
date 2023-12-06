@@ -34,7 +34,7 @@ body {
 
 #editItemForm button {
     padding: 8px 15px;
-    background-color: #6e1f3b;
+    background-color: #001f6b;
     color: white;
     border: none;
     cursor: pointer;
@@ -44,5 +44,5 @@ body {
 }
 
 #editItemForm button:hover {
-    background-color: #9f3158;
+    background-color: rgba(22, 49, 176, 0.95);
 }
