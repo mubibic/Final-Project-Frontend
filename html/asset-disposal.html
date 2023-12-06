@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/asset-disposal-page.css"/>
+    <title>Asset Disposal Page</title>
+</head>
+<body>
+<header>
+    <div class="company-logo">
+        <a onclick="window.location='main-page.html'" type="button">
+            <img
+                    src="../img/logos/blob.png"
+                    alt="Blob logo"
+                    class="blob-logo"
+                    id="logo"
+                    data-version-number = "3.0"
+            /></a></div>
+    <nav class="navbar">
+        <ul class="nav-items">
+
+            <li class="nav-item"><a href="../html/inventory-page.html" class="nav-link">INVENTORY</a></li>
+            <li class="nav-item"><a href="../html/asset-disposal.html" class="nav-link">ASSET DISPOSAL</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle">
+        <i class="bx bx-menu"></i>
+        <i class="bx bx-x"></i>
+    </div>
+</header>
+<button id="addAssetButton">Add Asset For Disposal</button>
+<table id="assetDisposalTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Serial Number</th>
+        <th>Extra Information</th>
+        <th>Disposal Date</th>
+        <th>Disposal Reason</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<script src="../js/fetchAssetDisposalItems.js"></script>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

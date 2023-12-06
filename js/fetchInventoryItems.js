@@ -69,3 +69,40 @@ function deleteItem(id) {
             });
     }
 }
+
+document.getElementById('filterButton').addEventListener('click', function() {
+    const type = document.getElementById('filterType').value;
+    const model = document.getElementById('filterModel').value;
+    const extraInformation = document.getElementById('filterExtraInformation').value;
+    const location = document.getElementById('filterLocation').value;
+    fetchFilteredItems(type, model, extraInformation, location);
+});
+
+function fetchFilteredItems(type, model, extraInformation, location) {
+    const query = new URLSearchParams({
+        type: type,
+        model: model,
+        extraInformation: extraInformation,
+        location: location
+    }).toString();
+
+    fetch(`http://localhost:8080/inventory/items/filter?${query}`)
+        .then(response => response.json())
+        .then(items => {
+            // Clear existing items and process response as before
+            // ...
+
+            const tableBody = document.querySelector('#inventoryTable tbody');
+            tableBody.innerHTML = '';
+
+            let totalQuantity = 0;
+            items.forEach(item => {
+                tableBody.appendChild(createTableRow(item));
+                totalQuantity += item.quantity; // Assuming 'quantity' is a property of your item
+            });
+
+            // Update total quantity display
+            document.getElementById('totalQuantityDisplay').innerText = `Total Quantity: ${totalQuantity}`;
+        })
+        .catch(error => console.error('Error fetching filtered items:', error));
+}

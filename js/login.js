@@ -9,7 +9,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
     fetch(apiEndpoint, {
-        mode: 'no-cors',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
