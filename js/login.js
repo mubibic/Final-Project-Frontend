@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
         .then(response => {
             if (response.ok) {
-                return response.json();
+                return response;
             } else {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
