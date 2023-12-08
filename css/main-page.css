@@ -11,3 +11,24 @@
     width: auto; /* Maintain aspect ratio */
     height: auto; /* Maintain aspect ratio */
 }
+
+.authentication{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+
+#authStatus{
+    color: white;
+    font-weight: bold;
+}
+
+#logoutButton{
+    color: white;
+}
+
+#logoutButton:hover{
+    color: #f09275;
+    cursor: pointer;
+}

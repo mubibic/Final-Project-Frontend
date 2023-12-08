@@ -44,3 +44,24 @@
 #addAssetButton:hover {
     background-color: rgba(22, 49, 176, 0.95);
 }
+
+.authentication{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+
+#authStatus{
+    color: white;
+    font-weight: bold;
+}
+
+#logoutButton{
+    color: white;
+}
+
+#logoutButton:hover{
+    color: #f09275;
+    cursor: pointer;
+}
