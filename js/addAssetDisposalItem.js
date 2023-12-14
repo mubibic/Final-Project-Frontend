@@ -3,6 +3,7 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
 
     const assetData = {
         type: document.getElementById('type').value,
+        serialNumber: document.getElementById('serialNumber').value,
         extraInformation: document.getElementById('extraInformation').value,
         disposalDate: document.getElementById('disposalDate').value,
         disposalReason: document.getElementById('disposalReason').value,

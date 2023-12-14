@@ -14,12 +14,20 @@
 }
 
 body {
+    margin: 0;
+    min-height: 100vh;
     display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    min-height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
-    background-color: #0f0a0f; /* Optional: Background color for the body */
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0a0f;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Adjust as needed */
+    max-width: 500px; /* Adjust as needed */
 }
 
 #editItemForm input[type="text"],
@@ -45,4 +53,19 @@ body {
 
 #editItemForm button:hover {
     background-color: rgba(22, 49, 176, 0.95);
+}
+
+#backButton button {
+    padding: 8px 15px;
+    background-color: #1f6e52;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px; /* Space above the button */
+    border-radius: 4px;
+}
+
+#backButton button:hover {
+    background-color: #319f75;
 }

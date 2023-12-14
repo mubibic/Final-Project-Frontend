@@ -72,7 +72,7 @@ function deleteItem(id) {
 
 function moveItem(id) {
     if(confirm("Are you sure you want to move this item to disposed assets?")) {
-        fetch(`http://localhost:8080/asset-management/transfer-to-disposed/${id}`, {
+        fetch(`http://localhost:8080/assetDisposal/transfer-to-disposed/${id}`, {
             method: 'POST'
         })
             .then(response => {

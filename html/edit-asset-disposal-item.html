@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <title>Edit Item</title>
   <link rel="stylesheet" href="../css/edit-asset-disposal-item.css">
-  <!-- Edit Inventory Item Form -->
+
+</head>
+<body>
+<!-- Edit Inventory Item Form -->
+
+<div class="content">
   <form id="editItemForm">
     <input type="hidden" id="editItemId">
     <input type="text" id="editItemType" placeholder="Type">
@@ -14,10 +19,15 @@
     <input type="text" id="editItemDisposalReason" placeholder="DisposalReason">
     <button type="submit">Update Item</button>
   </form>
-  <script src="../js/editAssetDisposalItem.js"></script>
 
-</head>
-<body>
+  <div id="backButton">
+    <a href="asset-disposal.html">
+      <button>Back</button>
+    </a>
+  </div>
+</div>
+
+<script src="../js/editAssetDisposalItem.js"></script>
 
 </body>
 </html>

@@ -34,8 +34,27 @@ function createTableRow(item) {
         <td>${item.disposalDate}</td>
         <td>${item.disposalReason}</td>
         <td>
-            <button onclick="moveItem(${item.id})">Move back</button>
+            <button onclick="moveBackItem(${item.id})">Move Back</button>
         </td>
     `;
     return tableRow;
+}
+
+function moveBackItem(id) {
+    if (confirm("Are you sure you want to move this item back to the asset disposal table?")) {
+        fetch(`http://localhost:8080/disposed-items/transfer-back-from-disposed/${id}`, {
+            method: 'POST'
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log(`Item with ID ${id} moved back successfully.`);
+                    location.reload();
+                } else {
+                    throw new Error('Item could not be moved back');
+                }
+            })
+            .catch(error => {
+                console.error('Error moving item back:', error);
+            });
+    }
 }

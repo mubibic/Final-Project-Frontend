@@ -26,3 +26,18 @@
 #disposedAssetItemsTable tr:hover {
     background-color: rgb(190, 201, 250);
 }
+
+#backButton button {
+    padding: 8px 15px;
+    background-color: #1f6e52;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px; /* Space above the button */
+    border-radius: 4px;
+}
+
+#backButton button:hover {
+    background-color: #319f75;
+}

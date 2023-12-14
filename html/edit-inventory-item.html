@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Edit Item</title>
     <link rel="stylesheet" href="../css/edit-inventory-item.css">
-    <!-- Edit Inventory Item Form -->
+</head>
+<div class="content">
     <form id="editItemForm">
         <input type="hidden" id="editItemId">
         <input type="text" id="editItemType" placeholder="Type">
@@ -14,9 +15,15 @@
         <input type="text" id="editItemLocation" placeholder="Location">
         <button type="submit">Update Asset</button>
     </form>
-    <script src="../js/editInventoryItem.js"></script>
 
-</head>
+    <div id="backButton">
+        <a href="inventory-page.html">
+            <button>Back</button>
+        </a>
+    </div>
+</div>
+
+<script src="../js/editInventoryItem.js"></script>
 <body>
 
 </body>
