@@ -1,18 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
+.login-background {
+    background-image: url('/img/logos/AGC_leaf_logo.png'); /* Replace 'path/to/your/logo.jpg' with the actual path to your logo image */
+    background-size: contain; /* Adjust the background size as needed */
+    background-position: top; /* Adjust the background position as needed */
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Adjust the margin-top to create space between header and login container */
+}
+
+/* Add styles for the header */
+header {
+    background-color: #333; /* Adjust the background color as needed */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-message {
+    margin-top: 20px; /* Add margin-top to create space between header and welcome message */
 }
 
 .input-group {
