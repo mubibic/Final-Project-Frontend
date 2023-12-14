@@ -36,6 +36,7 @@ function createTableRow(item) {
         <td>
             <button onclick="editItem(${item.id})">Edit</button>
             <button onclick="deleteItem(${item.id})">Delete</button>
+            <button onclick="moveItem(${item.id})">Move to Disposed</button>
         </td>
     `;
     return tableRow;
@@ -65,6 +66,25 @@ function deleteItem(id) {
             })
             .catch(error => {
                 console.error('Error deleting item:', error);
+            });
+    }
+}
+
+function moveItem(id) {
+    if(confirm("Are you sure you want to move this item to disposed assets?")) {
+        fetch(`http://localhost:8080/asset-management/transfer-to-disposed/${id}`, {
+            method: 'POST'
+        })
+            .then(response => {
+                if(response.ok) {
+                    console.log(`Item with ID ${id} moved to disposed assets successfully.`);
+                    location.reload();
+                } else {
+                    throw new Error('Item could not be moved');
+                }
+            })
+            .catch(error => {
+                console.error('Error moving item:', error);
             });
     }
 }

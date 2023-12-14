@@ -1,0 +1,28 @@
+#disposedAssetItemsTable {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#disposedAssetItemsTable th, #disposedAssetItemsTable td {
+    border: 1px solid #413f3f;
+    padding: 8px;
+    text-align: left;
+}
+
+#disposedAssetItemsTable th {
+    background-color: #6cc24a;
+    color: #171717;
+}
+
+#disposedAssetItemsTable tr:nth-child(even) {
+    background-color: rgb(212, 225, 250); /* Color for even rows */
+}
+#disposedAssetItemsTable tr:nth-child(odd) {
+    background-color: #eff6ff; /* Color for odd rows */
+}
+
+#disposedAssetItemsTable tr:hover {
+    background-color: rgb(190, 201, 250);
+}

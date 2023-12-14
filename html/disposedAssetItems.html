@@ -8,8 +8,8 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/global.css"/>
-    <link rel="stylesheet" href="../css/asset-disposal-page.css"/>
-    <title>Asset Disposal Page</title>
+    <link rel="stylesheet" href="../css/disposed-asset-items.css"/>
+    <title>Disposed Asset Items</title>
 </head>
 <body>
 <header>
@@ -38,11 +38,7 @@
         <i class="bx bx-x"></i>
     </div>
 </header>
-<a href="disposedAssetItems.html">
-    <button id="disposedItems">Disposed Items Table</button>
-</a>
-<button id="addAssetButton">Add Asset For Disposal</button>
-<table id="assetDisposalTable">
+<table id="disposedAssetItemsTable">
     <thead>
     <tr>
         <th>ID</th>
@@ -59,7 +55,8 @@
     </tbody>
 </table>
 
-<script src="../js/fetchAssetDisposalItems.js"></script>
+
+<script src="../js/fetchDisposedAssetItems.js"></script>
 <script src="../js/navBar.js"></script>
 </body>
 </html>
