@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/global.css"/>
     <link rel="stylesheet" href="../css/disposed-asset-items.css"/>
     <title>Disposed Asset Items</title>
+
 </head>
 <body>
 <header>
@@ -20,7 +21,7 @@
                     alt="Blob logo"
                     class="blob-logo"
                     id="logo"
-                    data-version-number = "3.0"
+                    data-version-number="3.0"
             /></a></div>
     <nav class="navbar">
         <ul class="nav-items">
@@ -45,6 +46,21 @@
     </a>
 </div>
 
+
+<div class="filter-section">
+    <input type="text" id="filterType" placeholder="Type">
+    <input type="text" id="filterSerialNumber" placeholder="SerialNumber">
+    <input type="text" id="filterExtraInformation" placeholder="Extra Information">
+    <input type="text" id="filterDisposalDate" placeholder="DisposalDate">
+    <input type="text" id="filterDisposalReason" placeholder="DisposalReason">
+    <button id="filterButton">Filter</button>
+</div>
+<div id="totalQuantityDisplay">Total Quantity: 0</div>
+
+<a>
+    <button id="printReportButton">Print report</button>
+</a>
+
 <table id="disposedAssetItemsTable">
     <thead>
     <tr>
@@ -65,5 +81,6 @@
 
 <script src="../js/fetchDisposedAssetItems.js"></script>
 <script src="../js/navBar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
 </body>
 </html>

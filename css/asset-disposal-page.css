@@ -45,6 +45,23 @@
     background-color: rgba(22, 49, 176, 0.95);
 }
 
+#disposedItemsButton {
+    font-family: "Raleway", sans-serif;
+    padding: 10px 15px;
+    background-color: #001f6b;
+    color: #e85f5f;
+    border: none;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    display: block; /* Make it a block element */
+    margin: 40px auto; /* Centering the button */
+    width: fit-content; /* Adjust width based on content */
+}
+
+#disposedItemsButton:hover {
+    background-color: rgba(22, 49, 176, 0.95);
+}
+
 .authentication{
     display: flex;
     flex-direction: column;

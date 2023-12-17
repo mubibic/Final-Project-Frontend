@@ -41,3 +41,33 @@
 #backButton button:hover {
     background-color: #319f75;
 }
+
+.filter-section {
+    margin: 20px;
+    text-align: center;
+}
+
+#totalQuantityDisplay {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333; /* Choose a color that fits your design */
+    text-align: center; /* Center the text if desired */
+    padding: 10px;
+    background-color: #f0f0f0; /* Light background for visibility */
+    border-radius: 5px; /* Rounded corners */
+    width: fit-content;
+    margin: 20px auto; /* Center the div on the page */
+}
+
+#printReportButton {
+    font-family: "Raleway", sans-serif;
+    padding: 15px 20px;
+    background-color: #001f6b;
+    color: #d5ee69;
+    border: none;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    display: block; /* Make it a block element */
+    margin: 40px auto; /* Centering the button */
+    width: fit-content; /* Adjust width based on content */
+}
