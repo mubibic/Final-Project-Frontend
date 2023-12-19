@@ -25,6 +25,18 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
 
         const result = await response.json();
         console.log('Asset Added:', result);
+
+
+        // Checking if item already exists in inventory
+        const response2 = await fetch(`http://localhost:8080/inventory/items/${result.id}`);
+        const existingItem = await response2.json();
+
+        if(existingItem){
+            alert("Item already exists, quantity updated");
+        }
+
+
+
         window.location.href = '../html/inventory-page.html';
     } catch (error) {
         console.error('Error adding asset:', error);
