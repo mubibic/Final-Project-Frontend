@@ -25,16 +25,20 @@
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
+
 img {
     width: 100%;
     height: auto;
 }
+
 .bx {
     font-size: 2.5rem;
 }
+
 .container {
     padding: 0 2rem;
 }
@@ -53,17 +57,21 @@ header {
     background-color: var(--dark-color);
     padding: 1rem 2rem;
 }
+
 .blob-logo {
     height: 4.5rem;
     transition: all 0.3s;
     cursor: pointer;
 }
+
 .nav-items {
     display: flex;
 }
+
 .nav-item {
     margin: 0 2rem;
 }
+
 .nav-link {
     font-size: 1.1rem;
     letter-spacing: 0.05rem;
@@ -75,6 +83,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .nav-link::before {
     content: "";
     background: linear-gradient(var(--primary-color), var(--primary-color-alt));
@@ -87,13 +96,16 @@ header {
     transform-origin: bottom right;
     transition: transform 150ms;
 }
+
 .nav-link:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
 .menu-toggle {
     display: none;
 }
+
 .bx-menu,
 .bx-x {
     cursor: pointer;
@@ -114,6 +126,7 @@ header {
     background-color: var(--less-dark-color);
     display: grid;
 }
+
 /* .home-computer-container {} */
 
 .slogan .company-title {
@@ -128,6 +141,7 @@ header {
     font-size: 1.5rem;
     font-weight: 600;
 }
+
 .slogan .company-slogan {
     background: -webkit-linear-gradient(
             120deg,
@@ -142,23 +156,23 @@ header {
     line-height: 1.8rem;
 }
 
-.authentication{
+.authentication {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: end;
 }
 
-#authStatus{
+#authStatus {
     color: white;
     font-weight: bold;
 }
 
-#logoutButton{
+#logoutButton {
     color: white;
 }
 
-#logoutButton:hover{
+#logoutButton:hover {
     color: #f09275;
     cursor: pointer;
 }

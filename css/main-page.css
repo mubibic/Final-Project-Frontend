@@ -12,23 +12,23 @@
     height: auto; /* Maintain aspect ratio */
 }
 
-.authentication{
+.authentication {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: end;
 }
 
-#authStatus{
+#authStatus {
     color: white;
     font-weight: bold;
 }
 
-#logoutButton{
+#logoutButton {
     color: white;
 }
 
-#logoutButton:hover{
+#logoutButton:hover {
     color: #f09275;
     cursor: pointer;
 }

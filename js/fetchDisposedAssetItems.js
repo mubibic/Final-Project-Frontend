@@ -1,7 +1,12 @@
+// This file contains the logic for fetching disposed asset items from the server and displaying them in a table.
+
+// The URL for the backend endpoint that returns all disposed asset items
 const disposedAssetItemsUrl = 'http://localhost:8080/disposed-items';
 
+// When the DOM is fully loaded (the webpage loaded in the browser) call the function to fetch the disposed asset items
 document.addEventListener('DOMContentLoaded', getDisposedAssetItems);
 
+// This is the fetch request to get the disposed asset items from the database and display them in a table
 async function getDisposedAssetItems() {
     try {
         const response = await fetch(disposedAssetItemsUrl);
@@ -16,6 +21,7 @@ async function getDisposedAssetItems() {
     }
 }
 
+// This function displays the disposed asset items in a table on the webpage
 function displayDisposedAssetItems(items) {
     const table = document.querySelector('#disposedAssetItemsTable tbody');
     items.forEach(item => {
@@ -24,6 +30,7 @@ function displayDisposedAssetItems(items) {
     });
 }
 
+// This function creates a table row for each disposed asset item and populates it with the item details
 function createTableRow(item) {
     const tableRow = document.createElement('tr');
     tableRow.innerHTML = `
@@ -40,6 +47,7 @@ function createTableRow(item) {
     return tableRow;
 }
 
+// This function redirects the user to the add disposed asset item page when the add disposed asset item button is clicked
 function moveBackItem(id) {
     if (confirm("Are you sure you want to move this item back to the asset disposal table?")) {
         fetch(`http://localhost:8080/disposed-items/transfer-back-from-disposed/${id}`, {
@@ -59,8 +67,8 @@ function moveBackItem(id) {
     }
 }
 
-
-document.getElementById('filterButton').addEventListener('click', function() {
+// document is the DOM object representing the webpage and addEventListener is listening for the click event on the addAssetButton
+document.getElementById('filterButton').addEventListener('click', function () {
     const type = document.getElementById('filterType').value;
     const serialNumber = document.getElementById('filterSerialNumber').value;
     const extraInformation = document.getElementById('filterExtraInformation').value;
@@ -69,6 +77,7 @@ document.getElementById('filterButton').addEventListener('click', function() {
     fetchFilteredItems(type, serialNumber, extraInformation, disposalDate, disposalReason);
 });
 
+// This function fetches the filtered items from the database and displays them in a table
 function fetchFilteredItems(type, serialNumber, extraInformation, disposalDate, disposalReason) {
     const query = new URLSearchParams({
         type: type,
@@ -87,7 +96,7 @@ function fetchFilteredItems(type, serialNumber, extraInformation, disposalDate, 
             const tableBody = document.querySelector('#disposedAssetItemsTable tbody');
             tableBody.innerHTML = '';
 
-            //showing total quantity
+            // This variable will be used to calculate the total quantity of items
             let totalQuantity = 0;
             items.forEach(item => {
                 tableBody.appendChild(createTableRow(item));
@@ -100,13 +109,12 @@ function fetchFilteredItems(type, serialNumber, extraInformation, disposalDate, 
         .catch(error => console.error('Error fetching filtered items:', error));
 }
 
-// ...
-
-//Print Report function
-document.getElementById('printReportButton').addEventListener('click', function() {
+// Print Report function
+document.getElementById('printReportButton').addEventListener('click', function () {
     exportToExcel();
 });
 
+// This function exports the disposed asset items to an Excel file and downloads it to the user's local disk
 function exportToExcel() {
     const itemsTable = document.querySelector('#disposedAssetItemsTable');
     const items = Array.from(itemsTable.querySelectorAll('tbody tr')).map(row => {
@@ -114,6 +122,7 @@ function exportToExcel() {
         return cells.map(cell => cell.innerText);
     });
 
+    // Add the header row
     const ws = XLSX.utils.aoa_to_sheet([['ID', 'Type', 'Serial Number', 'Extra Information', 'Disposal Date', 'Disposal Reason']].concat(items));
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'DisposedItemsReport');
@@ -121,4 +130,3 @@ function exportToExcel() {
     // Save the Excel file
     XLSX.writeFile(wb, 'DisposedItemsReport.xlsx');
 }
-// ...

@@ -1,7 +1,12 @@
+// This script fetches inventory items from the server and displays them in a table
+
+// URL for the inventory items endpoint
 const inventoryUrl = 'http://localhost:8080/inventory/items';
 
+// When the DOM is fully loaded (the webpage loaded in the browser) call the function to fetch the inventory items
 document.addEventListener('DOMContentLoaded', getInventoryItems);
 
+// This async function fetches inventory items from the server and displays them in a table
 async function getInventoryItems() {
     try {
         const response = await fetch(inventoryUrl);
@@ -12,7 +17,6 @@ async function getInventoryItems() {
         displayInventoryItems(inventoryItems);
     } catch (error) {
         console.error('Fetching inventory items failed:', error);
-        // Handle the error gracefully in UI
     }
 }
 
@@ -41,7 +45,7 @@ function createTableRow(item) {
     return tableRow;
 }
 
-document.getElementById('addInventoryButton').addEventListener('click', function() {
+document.getElementById('addInventoryButton').addEventListener('click', function () {
     window.location.href = '../html/add-inventory-item.html';
 });
 
@@ -51,12 +55,12 @@ function editItem(itemId) {
 }
 
 function deleteItem(id) {
-    if(confirm("Are you sure you want to delete this item?")) {
+    if (confirm("Are you sure you want to delete this item?")) {
         fetch(`http://localhost:8080/inventory/${id}`, {
             method: 'DELETE'
         })
             .then(response => {
-                if(response.ok) {
+                if (response.ok) {
                     console.log(`Item with ID ${id} deleted successfully.`);
                     // Reload the current page to reflect the deletion
                     location.reload();
@@ -70,7 +74,7 @@ function deleteItem(id) {
     }
 }
 
-document.getElementById('filterButton').addEventListener('click', function() {
+document.getElementById('filterButton').addEventListener('click', function () {
     const type = document.getElementById('filterType').value;
     const model = document.getElementById('filterModel').value;
     const extraInformation = document.getElementById('filterExtraInformation').value;

@@ -1,5 +1,7 @@
-// When the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+// This file contains the code for editing an asset disposal item and populating the edit form with the item details
+
+// When the DOM is fully loaded(the webpage loaded in the browser) call the function to fetch the item details
+document.addEventListener('DOMContentLoaded', function () {
     // Extract the item ID from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('id');
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fetch item details based on ID and populate the edit form
 async function fetchItemDetails(id) {
     try {
-        // Make sure this URL matches your backend endpoint
+        // Make sure this URL matches your backend endpoint - this is the fetch request to get the item details from the database
         const response = await fetch(`http://localhost:8080/assetDisposal/${id}`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -39,8 +41,8 @@ function populateEditForm(item) {
     document.getElementById('editItemDisposalReason').value = item.disposalReason;
 }
 
-// Event listener for form submission
-document.getElementById('editItemForm').addEventListener('submit', async function(event) {
+// Event listener for form submission - this is a fetch request to update the item details in the database
+document.getElementById('editItemForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const itemId = document.getElementById('editItemId').value;
@@ -50,6 +52,7 @@ document.getElementById('editItemForm').addEventListener('submit', async functio
     const itemDisposalDate = document.getElementById('editItemDisposalDate').value;
     const itemDisposalReason = document.getElementById('editItemDisposalReason').value;
 
+    // This is the data that is sent to the server to be added to the database
     const updatedItem = {
         type: itemType,
         serialNumber: itemSerialNumber,
@@ -58,6 +61,7 @@ document.getElementById('editItemForm').addEventListener('submit', async functio
         disposalReason: itemDisposalReason
     };
 
+    // This is the fetch request that sends the data to the server to be added to the database and checks if the item already exists
     try {
         const response = await fetch('http://localhost:8080/assetDisposal/' + itemId, {
             method: 'PUT',
@@ -67,6 +71,7 @@ document.getElementById('editItemForm').addEventListener('submit', async functio
             body: JSON.stringify(updatedItem)
         });
 
+        // This is the response from the server after the data has been added to the database and redirects to the inventory page
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

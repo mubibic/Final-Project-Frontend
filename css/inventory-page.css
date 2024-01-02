@@ -20,6 +20,7 @@
 #inventoryTable tr:nth-child(even) {
     background-color: rgb(212, 225, 250); /* Color for even rows */
 }
+
 #inventoryTable tr:nth-child(odd) {
     background-color: #eff6ff; /* Color for odd rows */
 }
@@ -63,23 +64,23 @@
 }
 
 
-.authentication{
+.authentication {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: end;
 }
 
-#authStatus{
+#authStatus {
     color: white;
     font-weight: bold;
 }
 
-#logoutButton{
+#logoutButton {
     color: white;
 }
 
-#logoutButton:hover{
+#logoutButton:hover {
     color: #f09275;
     cursor: pointer;
 }

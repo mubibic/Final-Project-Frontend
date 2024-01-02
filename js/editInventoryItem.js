@@ -1,5 +1,8 @@
-// When the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+// This file contains the code for the edit inventory item page and the fetch request to update the item in the database
+
+
+// When the DOM is fully loaded (the webpage loaded in the browser) call the function to fetch the item details
+document.addEventListener('DOMContentLoaded', function () {
     // Extract the item ID from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('id');
@@ -40,7 +43,7 @@ function populateEditForm(item) {
 }
 
 // Event listener for form submission
-document.getElementById('editItemForm').addEventListener('submit', async function(event) {
+document.getElementById('editItemForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const itemId = document.getElementById('editItemId').value;
@@ -50,6 +53,7 @@ document.getElementById('editItemForm').addEventListener('submit', async functio
     const itemQuantity = document.getElementById('editItemQuantity').value;
     const itemLocation = document.getElementById('editItemLocation').value;
 
+    // This is the data that is sent to the server to be added to the database
     const updatedItem = {
         type: itemType,
         model: itemModel,
@@ -58,6 +62,7 @@ document.getElementById('editItemForm').addEventListener('submit', async functio
         location: itemLocation
     };
 
+    // This is the fetch request that sends the data to the server to be added to the database
     try {
         const response = await fetch('http://localhost:8080/inventory/items/' + itemId, {
             method: 'PUT',

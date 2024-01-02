@@ -1,6 +1,13 @@
-document.getElementById('addAssetForm').addEventListener('submit', async function(event) {
+// This file contains the code for adding an asset disposal item to the database and
+// redirecting to the asset disposal page after the item has been added
+
+// This is the fetch request that sends the data to the server to be added to the database
+// using async function which is a promise that the data will be sent to the server
+// and await which waits for the promise to be fulfilled or rejected
+document.getElementById('addAssetForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
+    // This is the data that is sent to the server to be added to the database
     const assetData = {
         type: document.getElementById('type').value,
         serialNumber: document.getElementById('serialNumber').value,
@@ -9,6 +16,7 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
         disposalReason: document.getElementById('disposalReason').value,
     };
 
+    // This is the fetch request that sends the data to the server to be added to the database
     try {
         const response = await fetch('http://localhost:8080/assetDisposal', {
             method: 'POST',
@@ -18,6 +26,7 @@ document.getElementById('addAssetForm').addEventListener('submit', async functio
             body: JSON.stringify(assetData)
         });
 
+        // This is the response from the server after the data has been added to the database and redirects to the asset disposal page
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
